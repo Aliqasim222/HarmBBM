@@ -1,0 +1,17 @@
+name: harmbbm
+channels:
+  - pytorch
+  - conda-forge
+dependencies:
+  - python>=3.10
+  - pip
+  - pytorch>=2.1
+  - torchvision>=0.16
+  - numpy>=1.24
+  - pandas>=2.0
+  - matplotlib>=3.7
+  - pyyaml>=6.0
+  - tqdm>=4.66
+  - pytest>=7.4
+  - pip:
+      - medmnist>=3.0

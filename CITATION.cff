@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "Please cite the HarmBBM paper and this software if you use this repository."
+title: "HarmBBM: Harmonic Barzilai-Borwein Momentum for Deep Neural Network Training"
+type: software
+version: 0.1.0
+date-released: 2026-07-18
+license: MIT
+authors:
+  - family-names: Raza
+    given-names: Ali
+    email: 202450000001@stu.hebut.edu.cn
+    affiliation: School of Science, Hebei University of Technology, Tianjin, China
+  - family-names: Liu
+    given-names: Xinwei
+    email: mathlxw@hebut.edu.cn
+    affiliation: School of Science, Hebei University of Technology, Tianjin, China
+  - family-names: Kumar
+    given-names: Dileep
+    email: dileep.kumar@iub.edu.pk
+    affiliation: Department of Electronic Engineering, Faculty of Engineering, The Islamia University of Bahawalpur, Bahawalpur, Pakistan

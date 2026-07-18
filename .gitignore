@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+
+# Editors and operating systems
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Experiment outputs
+results/*
+!results/.gitkeep
+data/*
+!data/.gitkeep
+figures/*
+!figures/.gitkeep
+*.pt
+*.pth
+*.ckpt
+
+# Logs and temporary files
+*.log
+*.tmp
+.ipynb_checkpoints/
+.pytest_cache/
+.coverage
+htmlcov/

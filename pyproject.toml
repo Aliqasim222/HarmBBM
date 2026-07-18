@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "harmbbm"
+version = "0.1.0"
+description = "Harmonic Barzilai-Borwein Momentum for deep neural network training"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [
+  {name = "Ali Raza", email = "202450000001@stu.hebut.edu.cn"},
+  {name = "Xinwei Liu", email = "mathlxw@hebut.edu.cn"},
+  {name = "Dileep Kumar", email = "dileep.kumar@iub.edu.pk"}
+]
+dependencies = [
+  "torch>=2.1",
+  "torchvision>=0.16",
+  "numpy>=1.24",
+  "pandas>=2.0",
+  "matplotlib>=3.7",
+  "PyYAML>=6.0",
+  "tqdm>=4.66",
+  "medmnist>=3.0"
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.4"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["harmbbm*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
