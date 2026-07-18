@@ -11,9 +11,9 @@ optimizer, data-loading, training, search, plotting, and testing modules.
 
 | Author | Affiliation | Email |
 |---|---|---|
-| **Ali Raza** | School of Science, Hebei University of Technology, Tianjin, China | 202450000001@stu.hebut.edu.cn; sialali032@gmail.com |
-| **Xinwei Liu*** | School of Science, Hebei University of Technology, Tianjin, China | mathlxw@hebut.edu.cn |
-| **Dileep Kumar** | Department of Electronic Engineering, Faculty of Engineering, The Islamia University of Bahawalpur, Bahawalpur, Pakistan | dileep.kumar@iub.edu.pk |
+| **Ali Raza** | School of Science, Hebei University of Technology, Tianjin, China | 
+| **Xinwei Liu*** | School of Science, Hebei University of Technology, Tianjin, China | 
+| **Dileep Kumar** | Department of Electronic Engineering, Faculty of Engineering, The Islamia University of Bahawalpur, Bahawalpur, Pakistan  |
 
 `*` Corresponding author.
 
@@ -38,10 +38,6 @@ HarmBBM_GitHub/
 ├── configs/
 │   ├── mnist.yaml
 │   └── pathmnist.yaml
-├── docs/
-│   ├── ALGORITHM.md
-│   ├── REPRODUCIBILITY.md
-│   └── RESULTS_FORMAT.md
 ├── harmbbm/
 │   ├── data/
 │   │   ├── common.py
@@ -252,48 +248,6 @@ The script generates:
 - best-seed validation-accuracy comparison, PNG at 600 DPI and PDF;
 - three-seed mean test accuracy with sample-standard-deviation bars.
 
-## HarmBBM implementation
-
-During epoch `k`, HarmBBM uses a classical momentum update with one scalar rate.
-At the epoch boundary, it computes a BB candidate from the parameter displacement
-and the change in epoch-average effective gradients. A secant-alignment score and
-an average gradient--momentum alignment score produce a confidence value. The
-next rate is the confidence-weighted harmonic mean of the BB candidate and the
-scheduled SGDM rate. Invalid curvature leads directly to the SGDM schedule.
-
-The full equations and implementation notes are in
-[`docs/ALGORITHM.md`](docs/ALGORITHM.md).
-
-## BBbound implementation
-
-The BBbound module uses an epochwise BB candidate and restricts it with a dynamic
-upper bound based on the previously accepted learning rate. In the YAML files,
-
-```yaml
-beta1: auto
-```
-
-sets `beta1 = min(1, 4/M)`, where `M` is the number of mini-batches per epoch.
-The implementation is in `harmbbm/optimizers/bbbound.py`.
-
-## Saved results
-
-Each seed saves its validation-selected checkpoint and complete training history
-in CSV, JSON, and Pickle formats. Each optimizer directory saves the three-seed
-aggregate, selected configuration, and figures. See
-[`docs/RESULTS_FORMAT.md`](docs/RESULTS_FORMAT.md) for the complete layout.
-
-## Reproducibility notes
-
-- MNIST uses a fixed split seed of 42.
-- PathMNIST uses the official train, validation, and test partitions.
-- Final model selection uses validation accuracy only.
-- Test accuracy is measured once per seed after the selected checkpoint is
-  restored.
-- Deterministic execution is enabled by default.
-- Runtime comparisons should be reported only when all methods are run on the
-  same hardware and software environment.
-
 ## References
 
 1. J. Barzilai and J. M. Borwein, “Two-point step size gradient methods,”
@@ -313,8 +267,3 @@ aggregate, selected configuration, and figures. See
 ## License
 
 This repository is released under the MIT License. See [`LICENSE`](LICENSE).
-
-## Publishing on GitHub
-
-See [`docs/GITHUB_UPLOAD_GUIDE.md`](docs/GITHUB_UPLOAD_GUIDE.md) for command-line
-and browser-based publication steps.
