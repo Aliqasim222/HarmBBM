@@ -9,8 +9,8 @@ optimizer, data-loading, training, search, plotting, and testing modules.
 
 ## Authors
 
-| Author | Affiliation | Email |
-|---|---|---|
+| Author | Affiliation |
+|---|---|
 | **Ali Raza** | School of Science, Hebei University of Technology, Tianjin, China | 
 | **Xinwei Liu*** | School of Science, Hebei University of Technology, Tianjin, China | 
 | **Dileep Kumar** | Department of Electronic Engineering, Faculty of Engineering, The Islamia University of Bahawalpur, Bahawalpur, Pakistan  |
